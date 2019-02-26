@@ -1,0 +1,4 @@
+notifications:
+  slack:
+    rooms:
+	  - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#general
