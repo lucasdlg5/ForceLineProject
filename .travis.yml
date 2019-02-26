@@ -1,7 +1,3 @@
-notifications:
-  slack:
-    rooms:
-	  - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#general
 language: node_js
 node_js:
   - "stable"
@@ -13,3 +9,7 @@ script:
   - npm run build
 on:
   branch: master
+notifications:
+  slack:
+    rooms:
+	  - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#general
