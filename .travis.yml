@@ -20,6 +20,8 @@ install:
 
 deploy:
   provider: flask
+  api_key:
+    secure: "EZGQSHbsLQM8QEHbkAZN4g"
 
 on:
   branch: master
