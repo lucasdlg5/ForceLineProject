@@ -5,6 +5,8 @@ python:
  #dependencias 
 install: 
   - pip install -r requirements.txt
+  - pip  install .
+
 
 
 #env:
@@ -18,10 +20,7 @@ install:
 #run test
 #script: nosetests my_unittests.py
 
-deploy:
-  provider: flask
-  api_key:
-    secure: "EZGQSHbsLQM8QEHbkAZN4g"
+script: python app.py
 
 on:
   branch: master
