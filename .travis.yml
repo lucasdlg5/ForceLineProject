@@ -2,12 +2,9 @@ language: python
 python:
   - "2.7"
 
- #dependencias 
+#dependencias 
 install: 
   - pip install -r requirements.txt
-  - pip  install .
-
-
 
 #env:
 #DEBUG=True
@@ -15,7 +12,7 @@ install:
 
 #before_script é um campo que informa tudo que deve ser executado antes do Travis testar nosso “deploy”
 #before_script:
-  #- psql -c 'create database test;' -U mysql
+#- psql -c 'create database test;' -U mysql
 
 #run test
 #script: nosetests my_unittests.py
