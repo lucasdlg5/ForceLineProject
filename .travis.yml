@@ -26,3 +26,8 @@ notifications:
   slack:
     rooms:
       - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#travis
+
+deploy:
+    provider: heroku
+    api_key: 
+      secure: "113ecc07-711e-4211-891e-6107c540a438"
