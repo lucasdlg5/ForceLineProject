@@ -18,10 +18,17 @@ install:
 #- psql -c 'create database test;' -U mysql
 
 #run test
+
 script:
   - travis encrypt username/projectname TESTINGBOT_KEY=TESTINGBOT_KEY
   - travis encrypt username/projectname TESTINGBOT_SECRET=TESTINGBOT_SECRET
   - node tests/site/*.js
+
+#script: nosetests my_unittests.py
+git:
+  depth: 250
+  depth: false
+
 
 #script: python app.py
 
@@ -32,3 +39,8 @@ notifications:
   slack:
     rooms:
       - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#travis
+
+deploy:
+    provider: heroku
+    api_key: 
+      secure: "113ecc07-711e-4211-891e-6107c540a438"
