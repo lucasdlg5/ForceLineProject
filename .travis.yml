@@ -16,9 +16,6 @@ install:
 
 #run test
 #script: nosetests my_unittests.py
-git:
-  depth: 250
-  depth: false
 
 script: python app.py
 
@@ -33,4 +30,4 @@ notifications:
 deploy:
     provider: heroku
     api_key: 
-      secure: "113ecc07-711e-4211-891e-6107c540a438"
+      secure: 80b38e18-c3e4-4545-9487-193c8e2204a5
