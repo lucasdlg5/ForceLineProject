@@ -1,12 +1,15 @@
-language: python
-python:
+language: node_js
+node_js:
   - "2.7"
 
 #dependencias 
-install: 
-  - pip install -r requirements.txt
-
+install:
+  - npm install -g selenium-webdriver
 #env:
+# - [
+#      {secure: "6eda8b70d763de6dea5a011390462930"},
+#      {secure: "5ed2e5e70113b7fc784d3f4d96306b96"}
+#    ]
 #DEBUG=True
 #DATABASE_URL="mysql://localhost/test"
 
@@ -15,9 +18,16 @@ install:
 #- psql -c 'create database test;' -U mysql
 
 #run test
+
+script:
+  - travis encrypt username/projectname TESTINGBOT_KEY=TESTINGBOT_KEY
+  - travis encrypt username/projectname TESTINGBOT_SECRET=TESTINGBOT_SECRET
+  - node tests/site/*.js
+
 #script: nosetests my_unittests.py
 
-script: python app.py
+
+#script: python app.py
 
 on:
   branch: master
