@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - latest
+  - "2.7"
 
 #dependencias 
 install:
