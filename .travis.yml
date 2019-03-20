@@ -5,7 +5,7 @@ true:
   branch: master
 install:
   - pip install -r requirements.txt
-script: pytestest
+script: pytest
 notifications:  
   slack:
     rooms:
