@@ -1,10 +1,6 @@
-language: python
-python:
-- 3.6
+language: node_js
 true:
   branch: master
-install:
-  - pip install -r requirements.txt
 notifications:  
   slack:
     rooms:
@@ -17,4 +13,3 @@ deploy:
   on:
     repo: lucasdlg5/ForceLineProject
 
-    
