@@ -3,7 +3,9 @@ python:
 - 3.6
 true:
   branch: master
-notifications:
+install:
+  - pip install -r requirements.txt
+notifications:  
   slack:
     rooms:
     - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#travis
