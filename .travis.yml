@@ -12,4 +12,3 @@ deploy:
   app: forcelineworkspace
   on:
     repo: lucasdlg5/ForceLineProject
-
