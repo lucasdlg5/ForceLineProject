@@ -1,7 +1,6 @@
 language: python:
   "3.6"
   branch: master
-  - "pypy"
 
 install:
   - pip install .
