@@ -8,8 +8,6 @@ script:
   - pip install pyopenssl ndg-httpsclient pyasn1
   - pip install -r requirements.txt
 
-after_script:
-  - python app.py
 on:
   branch: master
 
