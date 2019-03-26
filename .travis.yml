@@ -1,6 +1,8 @@
 language: 
-  python:
+python:
   "3.6"
+
+sudo: true 
 
 script:
   - pip install -r requirements.txt
