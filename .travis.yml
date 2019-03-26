@@ -1,12 +1,11 @@
 language: python
 python:
 - '3.6'
-sudo: true
-script:
-- pip install pyopenssl ndg-httpsclient pyasn1
-- pip install -r requirements.txt
-true:
-  branch: master
+
+branches:
+  only:
+  - master
+
 notifications:
   slack:
     rooms:
