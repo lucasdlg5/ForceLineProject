@@ -1,11 +1,12 @@
 language: 
   python:
   "3.6"
-  branch: master
 
-install:
-  - pip install .
+script:
   - pip install requirements.txt
+
+on:
+  branch: master
 
 notifications:  
   slack:
