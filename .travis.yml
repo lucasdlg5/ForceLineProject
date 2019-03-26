@@ -7,7 +7,7 @@ sudo: true
 script:
   - pip install pyopenssl ndg-httpsclient pyasn1
   - pip install -r requirements.txt
-  
+
 after_script:
   - python app.py
 on:
@@ -17,4 +17,11 @@ notifications:
   slack:
     rooms:
     - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#travis
-    
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: o4gZ/SUiPZj1Ck53gQoggyQrbFGVY74rDkzQLDTnACPRRFvAkB5BcmwWxdOayuSLI8upyo/IH1VL0SmC6lsyFbKTee3+ufI8hHEXoRNG1sZdUUqA4ApXcWsDNYtBwxid682zq1llANRxo3XK2wDgtvrus0O68TtPVWh6tSQJzLX2VW+4osFfT30zahy1r6r9FCZUUHpS6v3WkAdNwdMsn4lREJ7lfahcKFnbYbW6Bk3k77rmf5s8mrGBrrz5JkoAmB8fHUJmR5Xx/zwz/ACEJAScD1TtDTi9QCh13eq3X9E220t9mjDP3zQsqlklONZbo8cls7g5NxNDBQ0WtqT7jKIPiUDEZy2ydihmzjT4gFHmktUlLk+e1OaVZdOeeB1877z661UkLYSo2/TvI31IY7VzYI4CuF4KkS5FjlPrDhnIfkECrezBQQ5CFP/KfjIqmQ/oBow0ejw6dUkqAbo1bBuVF0Pd/WRWLv5DftvZzGQkebA+gxFG7Julg5EkkM4ThLo8ACvkpPjPszjF9WArEJrOP2YeTDM2DzEbKVnPWQqrpSyVU3wkvtKgQJ1ZKFkxrOau7LWl6HeGekrdGX6iHdBCubH6rzwHgcKWB3bKId0+ohfElyS6XeNH+lFA1vQbQIgxq5otqt8QHs/QQ3EiBzMLssU8pkC8srGeVgVcMxg=
+  app: forcelineworkspace
+  on:
+    repo: lucasdlg5/ForceLineProject
