@@ -17,6 +17,6 @@ before_deploy:
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
 deploy:
   provider: script
-  script: docker push forceline/forceline
+  script: docker push gsoares01/forceline:tagname
   on:
     branch: test_docker
