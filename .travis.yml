@@ -4,8 +4,7 @@ services:
 env:
   global:
     - REGISTRY_USER=forcelinerobot
-    # REGISTRY_PASS=...
-    - secret: "lhyS5KIdFDaFbG0v7Iyt3Rs1rSLnCGv6XhxAgerqOIzQYKOhz8DPKBJgd5xBhSij+iqxUgE3MFdO43dvafUPcXtLHI4pFb3mWDXGOUVUcvh5moc/5E6VRKPaiQpVMYka1+mR+Io6AUzM8fcGLzt5FkjyfC9gilLt/VYxE4DJ/udt1F5NECly/dJ0OXnAX7QpM5LD4VkHfK5NbsXjg2PuX+XYuUVsDg+ddccFGAHo7J/6+dTf7TkrRsnwv7bFvj9BEXzKloLFk09zz+gQJxr017A5vnO0NqY2ZNSBw6tDmZb5zwLjKOqMHR3AL1mA/qoOTqpKYKjF4Pdjs23T6Al1a5vcnSAo3MVPUcCHYzFClPVoirgWCKPA0Ks3d4Zv/gU5euLOSgMXRWjTYLE1N4kXo0yBcKrotZZ8tsqQFkr94+F/IKCdDMZJj7S/Z3F988+uAEVP3a3NfwKzGxWvHCGMd4gb4dwfwNq9E/IevVJ3MKJy+u3xRQlHqMp7wLkZ98eZOhSg5XWaW9dA5rogWC2lE8bPogyguZSdlRRntRik7+51qQYnZoTfRCmnwcctNO/ipzukabPBq2v+Gg9AvAVajpeEE6D2UtYVfRIJJ2DP4IbPjm8JnTtLTLue4VqXNws1hFlaX7rJTjHaPsw0FghXwGil/AVI/9LEMkNrYAE92+s="
+    - REGISTRY_PASS="789456qwe"
 
 script:
   - docker build --tag forceline/forceline .
