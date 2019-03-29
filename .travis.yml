@@ -7,8 +7,8 @@ env:
     - REGISTRY_PASS="789456qwe"
 
 script:
-  - docker build --tag forceline/myimage .
-  - docker run forceline/myimage
+  - docker build --tag forceline/forceline .
+  - docker run forceline/forceline
 
 after_script:
   - docker images
@@ -17,6 +17,6 @@ before_deploy:
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
 deploy:
   provider: script
-  script: docker push forceline/myimage
+  script: docker push forceline/forceline
   on:
     branch: test_docker
