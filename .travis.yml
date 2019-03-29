@@ -1,19 +1,10 @@
-language: python
-python:
-- '3.6'
+sudo: required
+services:
+  - docker
 
-branches:
-  only:
-  - master
+script:
+  - docker build --tag myimage .
+  - docker run myimage
 
-notifications:
-  slack:
-    rooms:
-    - forcelineworkspace:ssVn0EAS5yVyvSyiv4Tph7n3#travis
-deploy:
-  provider: heroku
-  api_key:
-    secure: uGyi5f+GfpF+OjpjgYaUxotU4mU4uEJiqJwRAinUonj02bmjz0PGhkHlY9gMBOGNE/jfKflIZjk8F3lwdpOJHKzO8xNUtRt6fyXk0nviRc36oFvPjDzITo2/qKkMlp4qfkkhtUQXbqsc3OLNcem5zuK4wYXjB9i07Ek9CzdZLiWhPxkrDY0EuWh7OajM7KoNepOh8fjthdmL3fPfypmTDs6UkO55Stblt2RvG+37YkA/6LHQsIr4Y0RACqBDEcrDjmvYF3YmgoUbABTWHQjOZJxZOP8t1r/ntV59wQeaKupk5PwoH5TOOFLNW0+o3CsQSrnhNPxmNlaKk9kHzBGMEsr5a3s9RqsXV0jDQzwZwhuZ938TLMJM7PdU90W6Xxs/S5F5LSUMNS+FBghF9opWBusi5ncB03pJRGrRApHm5tqftLUUROPaypqwKIIE0kNwl9WZd21bGc/4NQZkBSHS5lEiTV4SJ21eZb3HmvLVAtjXvOUNfXIQapy8GDhLnH6rwzKAnkpEF7n01o8dsqw+Emca4w3dSS+eENionLpSW3V22yMebyawjchojlfQ6nC9+7asbfNKEjcgUR4AxXyHhzJbkoM5WWlFauFT/fSfj618bT/m4MMA+7+KlZFFi+OyqTdtgOaXVqe+/xFeeKe9m8ZIws8/VaBAXJZi+0aFtUg=
-  app: forcelineworkspace
-  on:
-    repo: lucasdlg5/ForceLineProject
+after_script:
+  - docker images
