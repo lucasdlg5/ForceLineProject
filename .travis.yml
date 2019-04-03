@@ -1,22 +1,17 @@
 sudo: required
 services:
   - docker
-env:
-  global:
-    - REGISTRY_USER=forcelinerobot
-    - REGISTRY_PASS="789456qwe"
-
+addons:
+  ssh_known_hosts: 167.99.144.191
 script:
-  - docker build --tag forceline/forceline .
-  - docker run forceline/forceline
+  - docker build -t forcelineproject:latest .
+  - docker run -d --name forceline --restart=always -p 8000:8000 forcelineproject:latest
 
 after_script:
   - docker images
 
-before_deploy:
-  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
 deploy:
   provider: script
-  script: docker push gsoares01/forceline
+  script: docker push forceline/forceline
   on:
     branch: test_docker

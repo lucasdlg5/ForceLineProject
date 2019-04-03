@@ -1,8 +1,15 @@
-FROM debian
-RUN apt-get update \
-	&& apt-get install -y --no-install-recommends cowsay \
-	&& rm -rf /var/lib/apt/lists/*
-ENV PATH "$PATH:/usr/games"
+FROM ubuntu:latest
 
-ENTRYPOINT ["cowsay"]
-CMD ["Hello, World!"]
+RUN apt-get update -y && apt-get install -y python3-pip python3-dev
+
+COPY ./requirements.txt /requirements.txt
+
+WORKDIR /
+
+RUN pip3 install -r requirements.txt
+
+COPY . /
+
+ENTRYPOINT [ "python3" ]
+
+CMD [ "app.py" ]
