@@ -1,0 +1,15 @@
+sudo: required	
+services:	
+  - docker	
+addons:	
+  ssh_known_hosts: 167.99.144.191
+
+branch:	
+  only:	
+  - test_docker	
+
+script:	
+  - docker build -t forcelineproject:latest .	
+
+before_install:
+  - ssh -i ./deploy_key root@167.99.144.191 pwd
