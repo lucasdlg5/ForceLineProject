@@ -2,7 +2,7 @@ sudo: required
 services:	
   - docker	
 addons:	
-  ssh_known_hosts: 167.99.144.191
+  ssh_known_hosts: 206.81.8.182
 
 branch:	
   only:	
@@ -12,4 +12,4 @@ script:
   - docker build -t forcelineproject:latest .	
 
 before_install:
-  - ssh -i ./deploy_key root@167.99.144.191 pwd
+  - ssh -i ./deploy_key root@206.81.8.182 pwd
