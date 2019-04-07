@@ -14,4 +14,4 @@ script:
 before_install:
   - chmod 600 deploy_key
   - mv deploy_key ~/.ssh/id_rsa
-  - ssh -i ./deploy_key root@206.81.8.182 "cd /project/ForceLineProject; ./circle_deployer.sh"
+  - ssh -i ./deploy_key root@206.81.8.182 "cd /project/ForceLineProject; sudo bash ./circle_deployer.sh"
