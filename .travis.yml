@@ -8,6 +8,9 @@ branch:
   only:	
   - master
 
+script:		
+  - docker build -t forcelineproject:latest .
+
 before_install:
   - chmod 600 deploy_key
   - mv deploy_key ~/.ssh/id_rsa
