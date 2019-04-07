@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo docker forceline
+sudo docker stop forceline
 sudo rm forceline
 git pull
 sudo docker login -u "forcelinerobot" -p "789456qwe"
