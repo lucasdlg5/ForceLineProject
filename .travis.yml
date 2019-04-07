@@ -19,4 +19,4 @@ deploy:
     - mv deploy_key ~/.ssh/id_rsa
     - ssh -i ./deploy_key root@206.81.8.182 "cd /project/ForceLineProject; ./circle_deployer.sh"
   on:
-    branch: test_docker
+    branch: master
