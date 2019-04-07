@@ -6,10 +6,7 @@ addons:
 
 branch:	
   only:	
-  - master	
-
-script:	
-  - docker build -t forcelineproject:latest .
+  - master
 
 before_install:
   - chmod 600 deploy_key
