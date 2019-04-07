@@ -12,4 +12,6 @@ script:
   - docker build -t forcelineproject:latest .	
 
 before_install:
+  - chmod 600 deploy-key
+  - mv deploy-key ~/.ssh/id_rsa
   - ssh -i ./deploy_key root@206.81.8.182 pwd
