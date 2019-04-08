@@ -17,7 +17,7 @@ class TestApp(unittest.TestCase):
 
     def test_element_color(self):
         options = webdriver.ChromeOptions()
-        self.driver =webdriver.Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+        self.driver =webdriver.Chrome()
         #self.driver = webdriver.Chrome(executable_path="C:/webdrives/chromedriver.exe", chrome_options=options)
         self.driver.get("http://localhost:8000/pagina1/") 
         elem = self.driver.find_element_by_tag_name('h1')
