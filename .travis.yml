@@ -19,7 +19,7 @@ branch:
 
 script:
   - docker build -t forcelineproject:latest .
-  - nosetests -v --with-coverage --cover-tests --cover-package=tests tests/test_app.py
+  - nosetests -v tests.test_app.py
   
 before_install:
   - chmod 600 deploy_key
