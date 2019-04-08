@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.support.color import Color
 import ast
 from  ForceLineProject.app import app
+from pyvirtualdisplay import Display
 
 
 class TestApp(unittest.TestCase):
@@ -16,6 +17,8 @@ class TestApp(unittest.TestCase):
         self.assertIn('42',response.data.decode('utf-8'))
 
     def test_element_color(self):
+        display = Display(visible=0, size=(800, 800))  
+        display.start()
         options = webdriver.ChromeOptions()
         self.driver =webdriver.Chrome()
         #self.driver = webdriver.Chrome(executable_path="C:/webdrives/chromedriver.exe", chrome_options=options)
