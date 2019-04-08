@@ -16,7 +16,7 @@ branch:
 
 script:
   - docker build -t forcelineproject:latest .
-  - npm install --global mocha	
+  - npm install --global mocha phantomjs request-promise
 
 before_install:
   - chmod 600 deploy_key
