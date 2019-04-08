@@ -16,7 +16,6 @@ branch:
 
 script:
   - docker build -t forcelineproject:latest .
-  - phantomjs testrunner.js
   - npm install --global mocha	
 
 before_install:
