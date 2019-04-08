@@ -1,6 +1,8 @@
-language: node_js
-node_js:
-  - "7"
+language: python
+python:
+  - "3.7"
+  install:
+  - pip install -r requirements.txt
 
 sudo: required	
 services:	
@@ -16,13 +18,10 @@ branch:
 
 script:
   - docker build -t forcelineproject:latest .
-  - npm install --global mocha phantomjs request-promise
-
+  - nosetests -v --with-coverage --cover-tests --cover-package=tests tests/test_app.py
+  
 before_install:
   - chmod 600 deploy_key
   - mv deploy_key ~/.ssh/id_rsa
   - ssh -i ./deploy_key root@206.81.8.182 "cd /project/ForceLineProject; sudo bash ./circle_deployer.sh"
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://206.81.8.182:8000 &
-
-after_script:
-  - npm test
