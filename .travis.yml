@@ -1,7 +1,8 @@
 language: python
 node:
   - "3.7"
-  install:
+
+install:
   - pip install -r requirements.txt
 
 sudo: required	
