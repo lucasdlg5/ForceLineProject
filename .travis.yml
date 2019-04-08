@@ -15,9 +15,9 @@ branch:
   - master
 
 script:
+  - docker build -t forcelineproject:latest .
   - phantomjs testrunner.js
   - npm install --global mocha	
-  - docker build -t forcelineproject:latest .
 
 before_install:
   - chmod 600 deploy_key
