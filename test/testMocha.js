@@ -1,8 +1,8 @@
 var assert = require('assert');
 
-//var phantom = require('phantomjs');
+var phantom = require('phantomjs');
 
-const phantom = require('phantom');
+//const phantom = require('phantom');
 
 var content = '';
 
