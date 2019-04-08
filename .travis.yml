@@ -1,17 +1,29 @@
+language: node_js
+node_js:
+  - "7"
+
 sudo: required	
 services:	
   - docker	
+dist: trusty
 addons:	
   ssh_known_hosts: 206.81.8.182
+  chrome: stable
 
 branch:	
   only:	
   - master
 
-script:		
+script:
+  - phantomjs testrunner.js
+  - npm install --global mocha	
   - docker build -t forcelineproject:latest .
 
 before_install:
   - chmod 600 deploy_key
   - mv deploy_key ~/.ssh/id_rsa
   - ssh -i ./deploy_key root@206.81.8.182 "cd /project/ForceLineProject; sudo bash ./circle_deployer.sh"
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://206.81.8.182 &
+
+after_script:
+  - npm test

@@ -1,0 +1,25 @@
+{
+  "name": "forcelineproject",
+  "version": "1.0.0",
+  "description": "Projeto DevOps",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasdlg5/ForceLineProject.git"
+  },
+  "keywords": [
+    "DevOps"
+  ],
+  "author": "Lucas D. / Gustavo S. / Jonathan S. / Jéssica M. / César A. / Kevin M. / Mayara F.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasdlg5/ForceLineProject/issues"
+  },
+  "homepage": "https://github.com/lucasdlg5/ForceLineProject#readme"
+}
