@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "42 é a resposta do universo!!!!!!"
+    return "<div id='resposta'>42 é a resposta do universo!!!!!!</div>"
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
