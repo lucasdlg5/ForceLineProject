@@ -8,7 +8,7 @@ var content = '';
 
 describe('Pagina Principal', function() {
     it('Deve retornar o texto caso ele esteja presente.', function() {
-      assert.equal(true, true)
+      assert.equal(true, false)
     });
 });
     
