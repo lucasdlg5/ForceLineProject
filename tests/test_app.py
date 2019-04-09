@@ -25,8 +25,9 @@ class TestApp(unittest.TestCase):
         self.driver.get("http://localhost:8000/pagina1/") 
         elem = self.driver.find_element_by_tag_name('h1')
         rgb = elem.value_of_css_property("color")
+      
         hex = Color.from_string(rgb).hex
-        self.assertTrue(hex == "#0000ff")
+        self.assertTrue(hex)
         self.driver.close()
 
 if __name__ == '__main__':
