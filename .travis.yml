@@ -37,11 +37,11 @@ before_script:
   # start Chrome and listen on localhost
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
-addons:
-  sonarcloud:
-    organization: "lucasdlg5-github" # the key of the org you chose at step #3
-    token:
-      secure: 6fd1c5449b5a0c11a121eaf42761bb56af0b118b # encrypted value of your token
-script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
+#addons:
+#  sonarcloud:
+#    organization: "lucasdlg5-github" # the key of the org you chose at step #3
+#    token:
+#      secure: 6fd1c5449b5a0c11a121eaf42761bb56af0b118b # encrypted value of your token
+#script:
+#  # other script steps might be done before running the actual analysis
+#  - sonar-scanner
