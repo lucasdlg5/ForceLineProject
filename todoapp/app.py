@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+from flask import Flask, render_template, request, jsonify
+from flaskext.mysql import MySQL
+import pymysql
+import os
+
+from model import UserModel
+from model import TaskModel
+
+app = Flask(__name__)
+mysql = MySQL()
+
+# mysql configurations
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = 'Todo'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+mysql.init_app(app)
+
+@app.route('/')
+def root():
+  return 'root'
+
+'''USER ROUTES'''
+@app.route('/user/add', methods=['POST'])
+def addUser():
+  UserModel.addUser(request, mysql)
+  return 'ok'
+
+@app.route('/user/findbyname/<string:name>', methods=['GET'])
+def findUserByName(name):
+  return jsonify(UserModel.findByName(name, mysql))
+
+@app.route('/user/login', methods=['POST'])
+def userLogin():
+  user = UserModel.valideteLogin(request.json['email'], request.json['password'], mysql)
+  if (user != None):
+    return jsonify({'email': user[0]['usr_email'], 'id': user[0]['usr_id']})
+  else:
+    return jsonify({'email': '', 'id': ''})
+
+'''TASK ROUTES'''
+@app.route('/task/add', methods=['POST'])
+def addTask():
+  if (TaskModel.addTask(request, mysql)):
+    return 'add'
+  else:
+    return 'not add'
+
+@app.route('/task/getAll/<int:id>', methods=['GET'])
+def getAll(id):
+  return jsonify(TaskModel.getAllTasks(id, mysql))
+
+@app.route('/task/remove/<int:id>')
+def removeTask(id):
+  if(TaskModel.removeTask(id, mysql)):
+    return 'removed'
+  else:
+    return 'not removed'
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host='0.0.0.0', port=port)
+
+
+
+
+
+
+
+
+
