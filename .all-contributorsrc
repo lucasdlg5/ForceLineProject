@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "martimiano",
+      "name": "Jéssica Martimiano",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/34030944?v=4",
+      "profile": "https://github.com/martimiano",
+      "contributions": [
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ForceLineProject",
+  "projectOwner": "lucasdlg5",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
