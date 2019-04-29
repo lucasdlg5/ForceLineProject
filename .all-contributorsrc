@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "mayaracsferreira",
+      "name": "Mayara Ferreira",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15734807?v=4",
+      "profile": "https://github.com/mayaracsferreira",
+      "contributions": [
+        "test",
+        "projectManagement",
+        "code",
+        "userTesting",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ForceLineProject",
+  "projectOwner": "lucasdlg5",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
