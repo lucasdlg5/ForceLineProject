@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "cesaraugusto98",
+      "name": "Cesar Augusto Siqueira Santos",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32581601?v=4",
+      "profile": "https://www.linkedin.com/in/cesar-augusto-santos98/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ForceLineProject",
+  "projectOwner": "lucasdlg5",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
