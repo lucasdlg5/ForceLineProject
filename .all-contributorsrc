@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "joohnnathans",
+      "name": "Jonathan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25937428?v=4",
+      "profile": "https://github.com/joohnnathans",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ForceLineProject",
+  "projectOwner": "lucasdlg5",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
