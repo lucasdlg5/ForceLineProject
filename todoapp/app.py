@@ -7,7 +7,7 @@ import os
 from model import UserModel
 from model import TaskModel
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="template")
 mysql = MySQL()
 
 # mysql configurations
@@ -17,9 +17,21 @@ app.config['MYSQL_DATABASE_DB'] = 'Todo'
 app.config['MYSQL_DATABASE_HOST'] = '134.209.76.136'
 mysql.init_app(app)
 
-@app.route('/')
+'''FUNCOES DE RENDERIZACAO'''
+def login_render_view():
+  return render_template('index.html')
+
+def home_render_view():
+  return render_template('home.html')
+
+'''VIEWS'''
+@app.route('/', methods=['GET', 'POST'])
 def root():
-  return 'root'
+  return login_render_view()
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+  return home_render_view()
 
 '''USER ROUTES'''
 @app.route('/user/add', methods=['POST'])
@@ -49,7 +61,11 @@ def addTask():
 
 @app.route('/task/getAll/<int:id>', methods=['GET'])
 def getAll(id):
-  return jsonify(TaskModel.getAllTasks(id, mysql))
+  model = TaskModel.getAllTasks(id, mysql)
+  if model != None:
+    return jsonify({'len': 0}, model)
+  else:
+    jsonify({'len': 0})
 
 @app.route('/task/remove/<int:id>')
 def removeTask(id):
