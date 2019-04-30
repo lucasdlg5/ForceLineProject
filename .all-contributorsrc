@@ -40,6 +40,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "kevin799",
+      "name": "kevin799",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25992251?v=4",
+      "profile": "https://github.com/kevin799",
+      "contributions": [
+        "userTesting"
+      ]
     }
   ],
   "contributorsPerLine": 7,
