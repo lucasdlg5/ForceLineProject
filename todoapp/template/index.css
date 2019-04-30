@@ -121,3 +121,13 @@ input{
     transition: .6s;
 
 }
+
+
+.line{
+    background: rgba(233, 227, 227, 0.099);
+    margin-top: 0;
+    padding-bottom: 1px;
+    margin-bottom: 15px;
+    width: 230px;
+    
+}
