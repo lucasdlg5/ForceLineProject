@@ -58,6 +58,15 @@
       "contributions": [
         "maintenance"
       ]
+    },
+    {
+      "login": "martimiano",
+      "name": "Jéssica Martimiano",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/34030944?v=4",
+      "profile": "https://github.com/martimiano",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
