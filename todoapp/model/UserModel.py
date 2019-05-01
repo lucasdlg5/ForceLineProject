@@ -4,10 +4,10 @@ def addUser(request, mysql):
   try:		
     sql = "INSERT INTO tb_user(usr_name, usr_cpf, usr_email, usr_password) VALUES(%s, %s, %s, %s)"
     data = (
-      request.json['usr_name'],
-      request.json['usr_cpf'],
-      request.json['usr_email'],
-      request.json['usr_password']
+      request.json['name'],
+      request.json['cpf'],
+      request.json['email'],
+      request.json['password']
     )
     conn = mysql.connect()
     cursor = conn.cursor()

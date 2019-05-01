@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session
 from flaskext.mysql import MySQL
+from flask_cors import CORS
 import pymysql
 import os
 
@@ -9,6 +10,7 @@ from model import TaskModel
 
 app = Flask(__name__, template_folder="template")
 mysql = MySQL()
+CORS(app)
 
 # mysql configurations
 app.config['MYSQL_DATABASE_USER'] = 'basic'
@@ -29,15 +31,17 @@ def home_render_view():
 def root():
   return login_render_view()
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def home():
   return home_render_view()
 
 '''USER ROUTES'''
 @app.route('/user/add', methods=['POST'])
 def addUser():
-  UserModel.addUser(request, mysql)
-  return 'ok'
+  if UserModel.addUser(request, mysql):
+    return jsonify({'email': request.json['email']})
+  else:
+    return jsonify({'email': ''})
 
 @app.route('/user/findbyname/<string:name>', methods=['GET'])
 def findUserByName(name):
@@ -47,6 +51,7 @@ def findUserByName(name):
 def userLogin():
   user = UserModel.valideteLogin(request.json['email'], request.json['password'], mysql)
   if (user != None):
+   # session['key'] = str(user[0]['usr_email'])+'?'+str(user[0]['usr_id'])
     return jsonify({'email': user[0]['usr_email'], 'id': user[0]['usr_id']})
   else:
     return jsonify({'email': '', 'id': ''})
