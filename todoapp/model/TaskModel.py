@@ -4,9 +4,9 @@ def addTask(request, mysql):
   try:		
     sql = "INSERT INTO tb_task(tsk_name, tsk_description, usr_id) VALUES(%s, %s, %s)"
     data = (
-      request.json['tsk_name'],
-      request.json['tsk_description'],
-      request.json['usr_id']
+      request.json['name'],
+      request.json['description'],
+      request.json['id']
     )
     conn = mysql.connect()
     cursor = conn.cursor()

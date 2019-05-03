@@ -60,9 +60,9 @@ def userLogin():
 @app.route('/task/add', methods=['POST'])
 def addTask():
   if (TaskModel.addTask(request, mysql)):
-    return 'add'
+    return jsonify({'success': '1'})
   else:
-    return 'not add'
+    return jsonify({'success': '0'})
 
 @app.route('/task/getAll/<int:id>', methods=['GET'])
 def getAll(id):

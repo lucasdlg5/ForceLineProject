@@ -8,6 +8,7 @@ body{
 
 .container{
     display: flex;
+    flex-direction: column;
     margin-top: 1%;
     margin-right: auto;
     margin-left: auto;
@@ -50,6 +51,11 @@ li{
     list-style-type: none;
 
     
+}
+#data {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
 }
 form{
     display: flex;
