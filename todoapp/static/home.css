@@ -56,6 +56,8 @@ li{
     display: flex;
     flex-direction: column;
     justify-content: left;
+    overflow-y: auto;
+   
 }
 form{
     display: flex;
@@ -109,8 +111,8 @@ p{
 {
 	position: relative;
 	padding: 10px 40px;
-     margin: 0px 10px 10px 0px;
-     float: left;
+    margin: 0px 10px 10px 0px;
+    float: left;
 	border-radius: 10px;
 	font-family: roboto;
 	font-size: 25px;
