@@ -2,7 +2,8 @@ import pymysql
 
 def addUser(request, mysql):
   try:		
-    sql = "INSERT INTO tb_user(usr_name, usr_cpf, usr_email, usr_password) VALUES(%s, %s, %s, %s)"
+    sql = '''INSERT INTO tb_user(usr_name, usr_cpf, usr_email, usr_password)
+            VALUES(%s, %s, %s, %s)'''
     data = (
       request.json['name'],
       request.json['cpf'],
@@ -22,7 +23,7 @@ def addUser(request, mysql):
     
 def findByName(name, mysql):
   try:
-    sql = "SELECT * FROM tb_user WHERE usr_name = %s"
+    sql = 'SELECT * FROM tb_user WHERE usr_name = %s'
     conn = mysql.connect()
     cursor = conn.cursor(pymysql.cursors.DictCursor)
     cursor.execute(sql, name)
@@ -36,7 +37,8 @@ def findByName(name, mysql):
 
 def valideteLogin(email, password, mysql):
   try:
-    sql = "SELECT usr_email, usr_password, usr_id FROM tb_user WHERE usr_email = %s"
+    sql = '''SELECT usr_email, usr_password, usr_id FROM tb_user
+             WHERE usr_email = %s'''
     conn = mysql.connect()
     cursor = conn.cursor(pymysql.cursors.DictCursor)
     cursor.execute(sql, email)
@@ -52,4 +54,3 @@ def valideteLogin(email, password, mysql):
   finally:
     cursor.close()
     conn.close()
-    
