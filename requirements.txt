@@ -5,3 +5,4 @@ selenium==3.141.0
 PyVirtualDisplay==0.2.1
 flask-mysql==1.4.0
 pymysql==0.9.3
+flask_cors==3.0.7
