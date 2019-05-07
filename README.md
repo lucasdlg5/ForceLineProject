@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.com/lucasdlg5/ForceLineProject.svg?branch=master)](https://travis-ci.com/lucasdlg5/ForceLineProject)
 
 ##Status SonarCloud
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lucasdlg5-github&metric=alert_status)](https://sonarcloud.io/dashboard?id=lucasdlg5-github)
 
 ## Contributors
