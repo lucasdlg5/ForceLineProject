@@ -4,7 +4,7 @@ const dataContainer = document.getElementById('data')
 window.addEventListener("load", () => {
   const sessionKey = window.sessionStorage.getItem('key')
 
-  if(!sessionKey) {
+  if (!sessionKey) {
     window.location.href = "http://localhost:8000/"
   }
 
@@ -16,23 +16,23 @@ window.addEventListener("load", () => {
 getUserId = () => {
   let session = window.sessionStorage.getItem('key')
 
-  return session.substr(session.indexOf('?')+1, session.length-1)
+  return session.substr(session.indexOf('?') + 1, session.length - 1)
 }
 
 const getAllTasksAndRenderData = (id) => {
   data = []
 
-  axios.get('http://localhost:8000/task/getAll/'+id+'')
+  axios.get('http://localhost:8000/task/getAll/' + id + '')
     .then(function (response) {
       response.data[1].forEach((i) => {
 
         data.push(
-          "<ul><li>"+i.tsk_id+"</li><li>"+i.tsk_name+"</li><li>"+i.tsk_description+"</li></ul>"
+          "<ul><li>" + i.tsk_id + "</li><li>" + i.tsk_name + "</li><li>" + i.tsk_description + "</li></ul>"
         )
       })
 
       removeAllChilds(dataContainer)
-      
+
       data.forEach(i => {
         dataContainer.innerHTML += i
       })
@@ -44,22 +44,27 @@ const getAllTasksAndRenderData = (id) => {
 
 removeAllChilds = (el) => {
   let child = el.lastElementChild
-  
+
   while (child) {
     el.removeChild(child)
     child = el.lastElementChild
   }
 }
 
-addItemInList = (name, description, id) => {
+const addItemInList = async (name, description, id) => {
+
   try {
-    if(axios.post('http://localhost:8000/task/add', {name, description, id})) {
-      getAllTasksAndRenderData(id)
+    const response = await axios.post('http://localhost:8000/task/add', { name, description, id })
+    if (response.data.success == '1') {
+      getAllTasksAndRenderData(id);
     }
-  } catch (err) {
-    console.log(err)
+
+  }
+  catch (err) {
+    console.log(err);
   }
 }
+
 
 removeItemInList = () => {
 
