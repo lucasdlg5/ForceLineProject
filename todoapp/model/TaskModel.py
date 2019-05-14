@@ -2,7 +2,8 @@ import pymysql
 
 def addTask(request, mysql):
   try:		
-    sql = "INSERT INTO tb_task(tsk_name, tsk_description, usr_id) VALUES(%s, %s, %s)"
+    sql = '''INSERT INTO tb_task(tsk_name, tsk_description, usr_id)
+           VALUES(%s, %s, %s)'''
     data = (
       request.json['name'],
       request.json['description'],
@@ -21,7 +22,7 @@ def addTask(request, mysql):
 
 def getAllTasks(id, mysql):
   try:
-    sql = "SELECT * FROM tb_task WHERE usr_id = %s"
+    sql = 'SELECT * FROM tb_task WHERE usr_id = %s'
     conn = mysql.connect()
     cursor = conn.cursor(pymysql.cursors.DictCursor)
     cursor.execute(sql, id)
@@ -37,7 +38,7 @@ def removeTask(id, mysql):
   try:
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute("DELETE FROM tb_task WHERE tsk_id=%s", (id))
+    cursor.execute('DELETE FROM tb_task WHERE tsk_id=%s', (id))
     conn.commit()
     return True
   except Exception as e:
@@ -45,6 +46,3 @@ def removeTask(id, mysql):
   finally:
     cursor.close()
     conn.close()
-
-'''https://www.roytuts.com/python-web-application-crud-example-using-flask-and-mysql/'''
-

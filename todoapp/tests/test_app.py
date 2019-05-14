@@ -20,11 +20,10 @@ class TestApp(unittest.TestCase):
         display = Display(visible=0, size=(800, 800))  
         display.start()
         options = webdriver.ChromeOptions()
-        self.driver =webdriver.Chrome()
-        #self.driver = webdriver.Chrome(executable_path="C:/webdrives/chromedriver.exe", chrome_options=options)
-        self.driver.get("http://localhost:8000/pagina1/") 
+        self.driver =webdriver.Chrome() 
+        self.driver.get('http://localhost:8000/pagina1/') 
         elem = self.driver.find_element_by_tag_name('h1')
-        rgb = elem.value_of_css_property("color")
+        rgb = elem.value_of_css_property('color')
       
         hex = Color.from_string(rgb).hex
         self.assertTrue(hex)
