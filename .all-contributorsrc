@@ -1,0 +1,77 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "cesaraugusto98",
+      "name": "Cesar Augusto Siqueira Santos",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32581601?v=4",
+      "profile": "https://www.linkedin.com/in/cesar-augusto-santos98/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mayaracsferreira",
+      "name": "Mayara Ferreira",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15734807?v=4",
+      "profile": "https://github.com/mayaracsferreira",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "lucasdlg5",
+      "name": "Lucas Domingos Leão Gomes",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15839576?v=4",
+      "profile": "https://github.com/lucasdlg5",
+      "contributions": [
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "gsoare2",
+      "name": "Gustavo Soares",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/23703101?v=4",
+      "profile": "https://github.com/gsoare2",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kevin799",
+      "name": "kevin799",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25992251?v=4",
+      "profile": "https://github.com/kevin799",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "joohnnathans",
+      "name": "Jonathan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25937428?v=4",
+      "profile": "https://github.com/joohnnathans",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "martimiano",
+      "name": "Jéssica Martimiano",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/34030944?v=4",
+      "profile": "https://github.com/martimiano",
+      "contributions": [
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ForceLineProject",
+  "projectOwner": "lucasdlg5",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}

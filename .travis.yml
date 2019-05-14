@@ -16,6 +16,7 @@ addons:
     packages:
       - chromium-chromedriver
 
+
 branch:	
   only:	
   - master
@@ -27,7 +28,7 @@ script:
 before_install:
   - chmod 600 deploy_key
   - mv deploy_key ~/.ssh/id_rsa
-  - ssh -i ./deploy_key root@206.81.8.182 "cd /project/ForceLineProject; sudo bash ./circle_deployer.sh"
+#  - ssh -i ./deploy_key root@206.81.8.182 "cd /project/ForceLineProject; sudo bash ./circle_deployer.sh"
   - sudo apt-get install google-chrome-stable
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://206.81.8.182:8000 &
 
@@ -36,4 +37,12 @@ before_script:
   - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
   # start Chrome and listen on localhost
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  
+
+addons:
+  sonarcloud:
+    organization: "lucasdlg5-github" # the key of the org you chose at step #3
+    token:
+      secure: 6fd1c5449b5a0c11a121eaf42761bb56af0b118b # encrypted value of your token
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
