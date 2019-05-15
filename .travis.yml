@@ -29,9 +29,10 @@ before_install:
   #- chmod 600 deploy_key
   #- mv deploy_key ~/.ssh/id_rsa
   #- ssh root@206.81.8.182 "cd /project/ForceLineProject; sudo bash ./circle_deployer.sh"
-  - sudo apt-get install sshpass
-
-  - sshpass -p 'ynk543yo10' ssh root@206.81.8.182
+  - ssh root@206.81.8.182
+  - expect "password:"
+  - sleep 1
+  - send "ynk543yo10\r"
   - sudo apt-get install google-chrome-stable
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://206.81.8.182:8000 &
 
