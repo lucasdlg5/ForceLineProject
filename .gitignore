@@ -21,3 +21,5 @@ pyvenv.cfg
 .venv
 venv/
 pip-selfcheck.json
+deploy_key
+id_rsa.pub
