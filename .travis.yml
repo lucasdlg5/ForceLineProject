@@ -20,17 +20,4 @@ script:
 - sonar-scanner
 
 before_install:
-  - openssl enc -aes-256-cbc -d -in deploy_key.enc -out deploy_key -k 12345
-  - cat deploy_key
-  #- ls -la
-  #- ssh -i ./id_rsa.pub root@206.81.8.182 "cd /project/ForceLineProject; sudo bash ./bash_deployer.sh"
-  #- sudo apt-get install sshpass
-  #- bash ssh_script_conn.bash
-  #- cd /project/ForceLineProject
-  #- bash ./bash_deployer.sh
-  #- sudo apt-get install google-chrome-stable
-  #- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://206.81.8.182:8000
-
-before_script:
-- ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
-- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
+  - openssl enc -aes-256-cbc -d -in deploy_key.enc -out deploy_key -k $PASS

@@ -1,20 +1,25 @@
 from fabric.api import *
 
-# host
 env.hosts = ['206.81.8.182']
-
-# username
 env.user = 'root'
-
-# or, specify path to server public key here:
-env.key_filename = '~/.ssh/id_rsa.pub'
-
-# specify path to deploy root dir - you need to create this
+env.key_filename = './deploy_key'
 env.deploy_project_root = '/project/ForceLineProject'
 
-def move():
-	# move to the correct directory
+def docker_deployer():
 	with cd('%s' % env.deploy_project_root):
-		# pull latest code
-		print('fetching updates from github')
-		sudo('bash ./bash_deployer.sh')
+
+		print('stop and deleting docker')
+		sudo("docker stop forceline")
+		sudo("docker rm forceline")
+
+		print('getting the changes of github')
+		sudo("git pull")
+
+		print("login docker")
+		sudo("docker login -u 'forcelinerobot' -p '789456qwe'")
+
+		print("creating docker")
+		sudo("docker build -t forcelineproject:latest . ")
+
+		print("runing docker")
+		sudo("docker run -d --name forceline --restart=always -p 8000:8000 forcelineproject:latest")
