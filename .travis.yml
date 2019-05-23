@@ -20,4 +20,6 @@ script:
 - sonar-scanner
 
 before_install:
+  - sudo apt-get install fabric3
   - openssl enc -aes-256-cbc -d -in deploy_key.enc -out deploy_key -k $PASS
+  - fab docker_deployer
