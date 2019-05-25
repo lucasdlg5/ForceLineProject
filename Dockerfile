@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update -y && apt-get install -y python3-pip python3-dev apt-get install python-mysql apt-get install libmysqlclient-dev
+RUN apt-get update -y && apt-get install -y python3-pip python3-dev python-mysql libmysqlclient-dev
 
 COPY ./requirements.txt /requirements.txt
 
