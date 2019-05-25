@@ -12,4 +12,4 @@ COPY . /
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "todoapp/app.py" ]
+CMD [ "todoapp/manage.py runserver" ]

@@ -21,5 +21,5 @@ script:
 
 before_install:
   - pip install fabric3
-  - openssl aes-256-cbc -salt -a -d -in deploy_key_enc -out deploy_key -k 123
+  - openssl aes-256-cbc -salt -a -d -in deploy_key_enc -out deploy_key -k $PASS
   - fab docker_deployer
