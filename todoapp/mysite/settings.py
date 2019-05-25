@@ -25,9 +25,10 @@ SECRET_KEY = 'e+g7g51u8f&x=@&fm(^#5h&*@a20s^r6o+1)38xv94jmah^3wa'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
+'''
 ALLOWED_HOSTS = ['206.81.8.182']
-
+'''
+ALLOWED_HOSTS += ip_addresses()
 
 # Application definition
 
