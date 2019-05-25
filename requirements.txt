@@ -4,4 +4,4 @@ selenium==3.141.0
 PyVirtualDisplay==0.2.1
 flask-cors==3.0.7
 Django~=2.0.6
-mysqlclient==1.4.2
+mysqlclient==1.4.2.post1
