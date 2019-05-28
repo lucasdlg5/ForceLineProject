@@ -19,7 +19,8 @@ def docker_deployer():
 		sudo("docker login -u 'forcelinerobot' -p '789456qwe'")
 
 		print("creating docker")
-		sudo("docker build -t forcelineproject:latest todoapp/. ")
+		cd("todoapp")
+		sudo("docker build -t forcelineproject:latest . ")
 
 		print("runing docker")
-		sudo("docker run -d --name forceline --restart=always -p 8000:8000 forcelineproject:latest")
+		sudo("docker run -d --name forceline -p 8000:80 forcelineproject:latest")
