@@ -10,6 +10,8 @@ RUN pip3 install --upgrade -r requirements.txt
 
 COPY . /
 
-CMD [ "ngrok http -region=us -hostname=kevinmikio.ngrok.io 8000 > /dev/null &" ]
+ENTRYPOINT [ "ngrok" ]
+CMD [ "http -region=us -hostname=kevinmikio.ngrok.io 8000 > /dev/null &" ]
 
-CMD [ "python3 manage.py runserver" ]
+ENTRYPOINT [ "python3" ]
+CMD [ "manage.py runserver" ]
