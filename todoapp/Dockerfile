@@ -6,9 +6,11 @@ EXPOSE 8000
 
 COPY ./requirements.txt /requirements.txt
 
-WORKDIR /todoapp
+WORKDIR /
 
 RUN pip3 install --upgrade -r requirements.txt
+
+WORKDIR /todoapp
 
 COPY . .
 
