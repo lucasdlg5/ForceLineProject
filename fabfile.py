@@ -22,6 +22,6 @@ def docker_deployer():
 		sudo("docker build -t forcelineproject:latest todoapp/ ")
 
 		print("runing docker")
-		sudo("docker run --name forceline -p 8000:8000 forcelineproject:latest")
+		sudo("docker run -d --name forceline -p 8000:8000 forcelineproject:latest")
 
 		sudo("ngrok http -region=us -hostname=kevinmikio.ngrok.io, 8000 > /dev/null")
