@@ -16,4 +16,4 @@ ENTRYPOINT [ "ngrok" ]
 CMD [ "http -region=us -hostname=kevinmikio.ngrok.io 8000 > /dev/null &" ]
 
 ENTRYPOINT [ "python3" ]
-CMD [ "manage.py runserver" ]
+CMD [ "todoapp/manage.py runserver" ]
