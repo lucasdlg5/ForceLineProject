@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/theme/default.css">
+    <link rel="stylesheet" href="../static/add-tasks-modal.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <!--
+        <modal  name="hello-world">
+            -->
+            <div id="modal" class="modal-dialog">
+            <md-card >                
+                <md-card-header class="modal-header">
+                    <div class="md-title">Tarefas</div>
+                    <div class="md-subhead">Adicionar tarefa</div>
+                </md-card-header>
+                <div class="modal-body">
+                    <md-field>
+                        <label>Nome</label>
+                        <md-input v-model="nome"></md-input>
+                    </md-field>
+                    <md-field>
+                        <label>Descrição</label>
+                        <md-input v-model="descricao"></md-input>
+                    </md-field>
+                </div>
+                <div class="modal-buttons">
+                        <md-button class="md-raised">Cancelar</md-button>
+                        <md-button class="md-raised">Adicionar</md-button>                       
+                    </div>
+            </md-card>
+        </div>        
+            <!--
+        </modal>
+        -->
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-material"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-js-modal@1.3.28/dist/index.min.js"></script>
+    <script>
+        Vue.use(VueMaterial.default)
+        Vue.use(window["vue-js-modal"].default);
+
+        new Vue({
+            el: '#app'
+
+        })
+    </script>
+</body>
+
+</html>

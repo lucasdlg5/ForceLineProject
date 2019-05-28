@@ -1,52 +1,41 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <link rel="stylesheet" href="../static/index.css">
 
-    </head>
-    <script>
-        window.addEventListener("load", () => {
-            const sessionKey = window.sessionStorage.getItem('key')
-            console.log(sessionKey)
-            if(sessionKey) {
-                window.location.href = "http://localhost:8000/home"
-            }
-        })
-    </script>
-    <body>
-        <div class="form">
-                <div class="form_signin">
-                        <div id="text">Sig in!</div>
-                        <div class="form_signin_input">
-                            <input id="signin_email" type="text" placeholder="E-mail"/>
-                            <div class="line"></div>
-                            <input id="signin_pass" type="password" placeholder="Password"/>
-                            <div class="line"></div>
-                            <button id="submit-signin" class="form_signin_button">SIGN IN</button>
-                     </div>
-                </div>
-                
-                <div class="separation"></div>
+<head>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-                <div class="form_signup">
-                    <div id="text">Sign Up!</div>
-                        <div class="form_signup_input">
-                            <input id="sigup_nome" type="text" placeholder="Nome"/>
-                            <div class="line"></div>
-                            <input id="sigup_cpf" type="text" placeholder="CPF"/>
-                            <div class="line"></div>
-                            <input id="sigup_email" type="text" placeholder="E-mail"/>
-                            <div class="line"></div>
-                            <input id="sigup_password" type="password" placeholder="Password"/>
-                            <div class="line"></div>
-                            <button id="submit-signup" class="form_signup_button">SIGN UP</button>
-                        </div>
-                </div>
+<body>
+    <div class="form">
+        <div class="form_signin">
+            <div id="text">Sig in!</div>
+            <div class="form_signin_input">
+                <input id="signin_email" type="text" placeholder="E-mail" />
+                <div class="line"></div>
+                <input id="signin_pass" type="password" placeholder="Password" />
+                <div class="line"></div>
+                <button id="submit-signin" class="form_signin_button">SIGN IN</button>
+            </div>
         </div>
-    
+        <div class="separation"></div>
+
+        <div class="form_signup">
+            <div id="text">Sign Up!</div>
+            <div class="form_signup_input">
+                <input id="sigup_nome" type="text" placeholder="Nome" />
+                <div class="line"></div>
+                <input id="sigup_cpf" type="text" placeholder="CPF" />
+                <div class="line"></div>
+                <input id="sigup_email" type="text" placeholder="E-mail" />
+                <div class="line"></div>
+                <input id="sigup_password" type="password" placeholder="Password" />
+                <div class="line"></div>
+                <button id="submit-signup" class="form_signup_button">SIGN UP</button>
+            </div>
+        </div>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../static/login.js"></script>
-    <script src="../static/registry.js"></script>
-    </body>
+</body>
+
 </html>

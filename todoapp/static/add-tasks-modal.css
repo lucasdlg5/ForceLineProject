@@ -1,0 +1,23 @@
+  
+.modal-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-dialog {
+    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;    
+}
+
+.md-card {
+    width: 500px;
+    margin: 0px auto;
+    padding: 20px;  
+    border-radius: 2px;
+    box-shadow: 0 2px 8px 1px;
+    transition: all 0.2s ease-in;    
+  }
+  

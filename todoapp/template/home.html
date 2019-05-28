@@ -1,31 +1,129 @@
+<!doctype html>
 <html>
-    <head>
-            <meta name="author" content="www.twitter.com/cheeriottis">
-            <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
-           <link rel="stylesheet" href="../static/home.css">
-    </head>
-    <body>
-        <div class="title">Tasks</div>
-        <div class="container">
-            
-            <ul>
-                <li>Id</li>
-                <li>Nome da Tarefa</li>
-                <li>Descrição</li> 
-            </ul>
-            <ul id="data"></ul>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/theme/default.css">
+    <link rel="stylesheet" href="../static/home.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="outer-modal">
+            <div id="modal" class="modal-dialog">
+                <md-card class="modal">
+                    <md-card-header class="modal-header">
+                        <div class="md-title">Tarefas</div>
+                        <div class="md-subhead">Adicionar tarefa</div>
+                    </md-card-header>
+                    <div class="modal-body">
+                        <md-field>
+                            <label>Nome</label>
+                            <md-input v-model="nome"></md-input>
+                        </md-field>
+                        <md-field>
+                            <label>Descrição</label>
+                            <md-input v-model="desc"></md-input>
+                        </md-field>
+                    </div>
+                    <div class="modal-buttons">
+                        <md-button @click="cancelarElemento()" class="md-raised">Cancelar</md-button>
+                        <md-button @click="increment" class="md-raised">Adicionar</md-button>
+                    </div>
+                </md-card>
+            </div>
         </div>
-        <div class="title">Add Task</div>
-        <div>
-            
-            <p>Nome da Tarefa</p>
-            <input id="name" type="text"/>
-            <p>Descrição</p> 
-            <textarea id="description" name="comentário" rows="10" cols="40"></textarea>
-            <button id="add-task" class="action-button shadow animate green">Add</button>
-        </div>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="../static/home.js"></script>
-    </body>
+
+
+        <md-card class="tasks-card">
+            <md-card-header class="home-header">
+                <div class="md-title">Tarefas</div>
+                <modal ref="modal"></modal>
+                <md-button @click="pegarElemento()" id="add-task" class="md-fab md-primary">
+                    <md-icon>add</md-icon>
+                </md-button>
+            </md-card-header>
+
+            <div class="home-content">
+                <md-table md-card class="tasks-table">
+
+                    <md-table-row >
+                        <md-table-head md-numeric>ID</md-table-head>
+                        <md-table-head>Nome</md-table-head>
+                        <md-table-head>Descrição</md-table-head>
+                        <md-table-head>Excluir</md-table-head>
+
+                    </md-table-row>
+
+                    <md-table-row v-for="t in teste" :key="t.id">
+                        <md-table-cell md-numeric id=>{{ t.id }}</md-table-cell>
+                        <md-table-cell>{{ t.nome }}</md-table-cell>
+                        <md-table-cell>{{ t.desc}}</md-table-cell>
+                        <md-table-cell>
+                            <md-button @click="removerRegistro(t.id)">
+                                <md-icon>delete</md-icon>
+                            </md-button>
+                        </md-table-cell>
+
+
+                    </md-table-row>
+
+                    
+                    
+                </md-table>
+            </div>
+        </md-card>
+
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-material"></script>
+    <script>
+        Vue.use(VueMaterial.default)
+
+        new Vue({
+            el: '#app',
+            data: {              
+                    
+                    nome: "",
+                    desc: "",
+                    teste: [],
+                    count: 0
+                
+            },
+            methods: {
+                pegarElemento() {
+                    document.getElementById("outer-modal").style.display = "block"                    
+                },
+                cancelarElemento(){
+                    document.getElementById("outer-modal").style.display = "none"                    
+                },
+                increment(){
+                    this.counter();
+                    this.teste.push({
+                        'id': this.count,
+                        'nome': this.nome,
+                        'desc': this.desc
+
+                    })
+                    
+                },
+                counter(){
+                    this.count ++;
+                },
+                removerRegistro(e){
+                    this.teste.splice(e-1,1);
+                    alert(e-1)
+                }
+                
+            }
+        })
+    </script>
+</body>
+
 </html>
