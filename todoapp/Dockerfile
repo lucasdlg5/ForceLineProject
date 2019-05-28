@@ -6,12 +6,10 @@ EXPOSE 8000
 
 COPY ./requirements.txt /requirements.txt
 
-WORKDIR /
+WORKDIR /todoapp
 
 RUN pip3 install --upgrade -r requirements.txt
 
-COPY . /
-
-CMD [ "http", "-region=us", "-hostname=kevinmikio.ngrok.io", "8000" ]
+COPY . .
 
 CMD [ "python3", "manage.py", "runserver" ]
