@@ -12,7 +12,7 @@ def docker_deployer():
 		sudo("git pull")
 
 		print('executing ngok domain')
-		sudo("ngrok http -region=us -hostname=kevinmikio.ngrok.io 8000 > /dev/null &")
+		sudo("ngrok http -region=us -hostname=kevinmikio.ngrok.io 8000 > /dev/null & disown")
 
 		print('executing django app')
-		sudo("python3 todoapp/manage.py runserver")
+		sudo("python3 todoapp/manage.py runserver > /dev/null 2>&1 & disown")
