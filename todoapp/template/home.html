@@ -117,8 +117,8 @@
                     this.count ++;
                 },
                 removerRegistro(e){
-                    this.teste.splice(e-1,1);
-                    alert(e-1)
+                    var index = this.teste.indexOf(e);
+                    this.teste.splice(index,1);
                 }
                 
             }
