@@ -32,19 +32,18 @@
                         </md-field>
                     </div>
                     <div class="modal-buttons">
-                        <md-button @click="cancelarElemento()" class="md-raised">Cancelar</md-button>
-                        <md-button @click="increment" class="md-raised">Adicionar</md-button>
+                        <md-button @click="cancelarTask()" class="md-raised">Cancelar</md-button>
+                        <md-button @click="adicionarTask" class="md-raised">Adicionar</md-button>
                     </div>
                 </md-card>
             </div>
         </div>
 
-
         <md-card class="tasks-card">
             <md-card-header class="home-header">
                 <div class="md-title">Tarefas</div>
                 <modal ref="modal"></modal>
-                <md-button @click="pegarElemento()" id="add-task" class="md-fab md-primary">
+                <md-button @click="abrirModal()" id="add-task" class="md-fab md-primary">
                     <md-icon>add</md-icon>
                 </md-button>
             </md-card-header>
@@ -52,7 +51,7 @@
             <div class="home-content">
                 <md-table md-card class="tasks-table">
 
-                    <md-table-row >
+                    <md-table-row>
                         <md-table-head md-numeric>ID</md-table-head>
                         <md-table-head>Nome</md-table-head>
                         <md-table-head>Descrição</md-table-head>
@@ -69,12 +68,7 @@
                                 <md-icon>delete</md-icon>
                             </md-button>
                         </md-table-cell>
-
-
                     </md-table-row>
-
-                    
-                    
                 </md-table>
             </div>
         </md-card>
@@ -88,39 +82,40 @@
 
         new Vue({
             el: '#app',
-            data: {              
-                    
-                    nome: "",
-                    desc: "",
-                    teste: [],
-                    count: 0
-                
+            data: {
+
+                nome: "",
+                desc: "",
+                teste: [],
+                count: 0
+
             },
             methods: {
-                pegarElemento() {
-                    document.getElementById("outer-modal").style.display = "block"                    
+                abrirModal() {
+                    document.getElementById("outer-modal").style.display = "block"
                 },
-                cancelarElemento(){
-                    document.getElementById("outer-modal").style.display = "none"                    
+                cancelarTask() {
+                    document.getElementById("outer-modal").style.display = "none"
                 },
-                increment(){
+                adicionarTask () {
                     this.counter();
                     this.teste.push({
                         'id': this.count,
                         'nome': this.nome,
                         'desc': this.desc
-
-                    })
-                    
+                    })                     
+                    this.nome="";
+                    this.desc="";
+                    this.cancelarTask();
                 },
-                counter(){
-                    this.count ++;
+                counter() {
+                    this.count++;
                 },
-                removerRegistro(e){
+                removerRegistro(e) {
                     var index = this.teste.indexOf(e);
-                    this.teste.splice(index,1);
+                    this.teste.splice(index, 1);
                 }
-                
+
             }
         })
     </script>
