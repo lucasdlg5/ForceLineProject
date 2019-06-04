@@ -1,34 +1,13 @@
 from django.db import models
-from django.utils import timezone
+from rest_framework import serializers
 
 
-class Post(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(
-            default=timezone.now)
-    published_date = models.DateTimeField(
-            blank=True, null=True)
+class Message(models.Model):
+    subject = models.CharField(max_length=200)
+    body = models.TextField()
 
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
 
-    def __str__(self):
-        return self.title
-
-class Primeiro_Migrate_SQN2(models.Model):
-    teste_titulo  = models.CharField(max_length=200)
-    teste_texto = models.TextField()
-    teste_date = models.DateTimeField(
-            default=timezone.now)
-    teste_date2 = models.DateTimeField(
-            blank=True, null=True)
-
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
-
-    def __str__(self):
-        return self.title
+class MessageSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Message
+        fields = ('url', 'subject', 'body', 'pk')
