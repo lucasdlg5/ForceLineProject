@@ -19,6 +19,7 @@ def docker_deployer():
 		sudo("docker login -u 'forcelinerobot' -p '789456qwe'")
 
 		print("creating docker")
+		sudo("ls -la")
 		sudo("docker build -t forcelineproject:latest todoapp/. ")
 
 		print("runing docker")
